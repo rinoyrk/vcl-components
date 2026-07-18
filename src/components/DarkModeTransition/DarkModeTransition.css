@@ -1,0 +1,9 @@
+.dark-mode-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: circle(0px at 50% 50%);
+}

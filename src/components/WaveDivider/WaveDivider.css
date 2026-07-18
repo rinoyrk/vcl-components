@@ -1,0 +1,35 @@
+.wave-divider-root {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-svg {
+  width: 100%;
+  display: block;
+}
+
+.wave-path {
+  animation: wave-scroll linear infinite;
+  transform-origin: center bottom;
+}
+
+.wave-path--back {
+  animation-direction: reverse;
+}
+
+@keyframes wave-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.wave-svg {
+  min-width: 200%;
+  animation: wave-container linear infinite;
+}
+
+@keyframes wave-container {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

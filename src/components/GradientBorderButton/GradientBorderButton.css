@@ -1,0 +1,87 @@
+.gradient-border-btn {
+  display: inline-flex;
+  padding: 2px;
+  border-radius: 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+
+.gradient-border-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* The spinning conic gradient track */
+.gradient-border-btn__track {
+  position: absolute;
+  inset: -60%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--c1),
+    var(--c2),
+    var(--c3),
+    var(--c1)
+  );
+  animation: spin-gradient 3s linear infinite;
+  z-index: 0;
+}
+
+.gradient-border-btn:hover .gradient-border-btn__track {
+  animation-duration: 1.4s;
+}
+
+@keyframes spin-gradient {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* The inner filled surface */
+.gradient-border-btn__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 28px;
+  border-radius: 12px;
+  background: #0f0f1a;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Hover shimmer sweep */
+.gradient-border-btn__shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.06) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  background-position: 200% 0;
+  transition: background-position 0.5s ease;
+}
+
+.gradient-border-btn:hover .gradient-border-btn__shimmer {
+  background-position: -200% 0;
+  animation: shimmer-sweep 0.7s ease forwards;
+}
+
+@keyframes shimmer-sweep {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
