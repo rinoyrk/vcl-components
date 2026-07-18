@@ -283,7 +283,7 @@ function App() {
       {/* Floating Navbar */}
       <FloatingNavbar
         ctaLabel="View Source"
-        onCtaClick={() => window.open("https://github.com", "_blank", "noopener,noreferrer")}
+        onCtaClick={() => window.open("https://github.com/rinoyrk/vcl-components", "_blank", "noopener,noreferrer")}
       />
 
       {/* Hero section */}
